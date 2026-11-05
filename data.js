@@ -2,17 +2,17 @@
 // grade : ok 정답 · near 아쉬움(틀림은 아니지만 정답 아님) · bad 실패
 // fx : 그 상황 장면에서 벌어지는 일 (index.html의 scene 함수가 처리)
 const CARDS = {
-  n2:  {no:'01', name:'질소', nick:'공기의 지배자', air:'공기 중 약 78%', trait:'다른 물질과 쉽게 반응하지 않는 안정적인 기체', use:'과자 포장, 식품 보관, 액체질소 냉각', power:'산화 방어막', powerText:'식품이 산소와 반응하는 것을 줄인다.', sym:'N₂', color:'#2f6fb0'},
-  o2:  {no:'02', name:'산소', nick:'생명의 수호자', air:'공기 중 약 21%', trait:'사람의 호흡에 필요하고 물질이 타는 것을 돕는 기체', use:'병원 산소 공급, 용접, 제철', power:'연소 부스터', powerText:'불이 더 잘 타도록 돕는다.', sym:'O₂', color:'#d9482b'},
-  h2:  {no:'03', name:'수소', nick:'초경량 에너지 전사', air:'공기 중 약 0.000055%', trait:'가장 가벼운 기체이며 불이 잘 붙는다.', use:'수소 연료전지, 로켓 연료', power:'에너지 변환', powerText:'연료전지에서 산소와 반응해 전기를 만든다.', sym:'H₂', color:'#0e9f8e'},
-  he:  {no:'04', name:'헬륨', nick:'하늘을 나는 마법사', air:'공기 중 약 0.00052%', trait:'공기보다 가볍고 불에 타지 않는다.', use:'풍선, 비행선, MRI 장비 냉각', power:'공중 부양', powerText:'풍선이 하늘로 떠오르게 한다.', sym:'He', color:'#e0a100'},
-  ne:  {no:'05', name:'네온', nick:'빛의 마법사', air:'공기 중 약 0.0018%', trait:'전기가 흐르는 방전관에서 붉은 주황빛을 낸다.', use:'네온사인, 표시등, 레이저', power:'네온 플래시', powerText:'방전관 안에서 빛을 낸다.', sym:'Ne', color:'#ef5a24'},
-  co2: {no:'06', name:'이산화 탄소', nick:'식물의 조력자', air:'공기 중 약 0.04%', trait:'광합성에 사용되며 열을 흡수하는 온실기체', use:'탄산음료, 소화기, 드라이아이스', power:'광합성 지원', powerText:'식물이 양분을 만드는 데 필요한 재료를 제공한다.', sym:'CO₂', color:'#3d8b37'},
-  ar:  {no:'07', name:'아르곤', nick:'철벽 방어 기사', air:'공기 중 약 0.93%', trait:'다른 물질과 거의 반응하지 않는 기체', use:'용접 보호가스, 전구, 복층유리', power:'금속 보호막', powerText:'뜨거운 금속이 공기와 반응하는 것을 막는다.', sym:'Ar', color:'#6b4fb3'},
-  h2o: {no:'08', name:'수증기', nick:'날씨의 마법사', air:'공기 중 약 0~4% (변동)', trait:'눈에 보이지 않는 기체 상태의 물', use:'증기터빈, 가습, 조리', power:'구름 생성', powerText:'냉각되어 응결하면 작은 물방울을 만든다.', sym:'H₂O', color:'#3aa0d8'},
-  ch4: {no:'09', name:'메테인(메탄)', nick:'불꽃의 드래곤', air:'약 0.0002%', trait:'도시가스의 주성분, 연료로 사용', use:'', power:'블루 파이어', powerText:'', sym:'CH₄', color:'#2456c4', ext:true},
-  o3:  {no:'10', name:'오존', nick:'자외선 방패', air:'위치에 따라 변동', trait:'성층권에서는 자외선 흡수, 지표면에서는 유해할 수 있음', use:'', power:'UV 실드', powerText:'', sym:'O₃', color:'#7a3fa0', ext:true},
-  xe:  {no:'11', name:'제논(크세논)', nick:'희귀한 빛의 전사', air:'약 0.000009%', trait:'특수 조명, 일부 의료 분야에 사용', use:'', power:'제논 빔', powerText:'', sym:'Xe', color:'#1f8fa3', ext:true},
+  n2:  {no:'01', name:'질소', nick:'공기의 지배자', air:'공기 중 약 78%', trait:'다른 물질과 쉽게 반응하지 않는 안정적인 기체', use:'과자 포장, 식품 보관, 액체질소 냉각', power:'산화 방어막', powerText:'식품이 산소와 반응하는 것을 줄인다.', sym:'N₂', art:'cards/01.webp', color:'#2f6fb0'},
+  o2:  {no:'02', name:'산소', nick:'생명의 수호자', air:'공기 중 약 21%', trait:'사람의 호흡에 필요하고 물질이 타는 것을 돕는 기체', use:'병원 산소 공급, 용접, 제철', power:'연소 부스터', powerText:'불이 더 잘 타도록 돕는다.', sym:'O₂', art:'cards/02.webp', color:'#d9482b'},
+  h2:  {no:'03', name:'수소', nick:'초경량 에너지 전사', air:'공기 중 약 0.000055%', trait:'가장 가벼운 기체이며 불이 잘 붙는다.', use:'수소 연료전지, 로켓 연료', power:'에너지 변환', powerText:'연료전지에서 산소와 반응해 전기를 만든다.', sym:'H₂', art:'cards/03.webp', color:'#0e9f8e'},
+  he:  {no:'04', name:'헬륨', nick:'하늘을 나는 마법사', air:'공기 중 약 0.00052%', trait:'공기보다 가볍고 불에 타지 않는다.', use:'풍선, 비행선, MRI 장비 냉각', power:'공중 부양', powerText:'풍선이 하늘로 떠오르게 한다.', sym:'He', art:'cards/04.webp', color:'#e0a100'},
+  ne:  {no:'05', name:'네온', nick:'빛의 마법사', air:'공기 중 약 0.0018%', trait:'전기가 흐르는 방전관에서 붉은 주황빛을 낸다.', use:'네온사인, 표시등, 레이저', power:'네온 플래시', powerText:'방전관 안에서 빛을 낸다.', sym:'Ne', art:'cards/05.webp', color:'#ef5a24'},
+  co2: {no:'06', name:'이산화 탄소', nick:'식물의 조력자', air:'공기 중 약 0.04%', trait:'광합성에 사용되며 열을 흡수하는 온실기체', use:'탄산음료, 소화기, 드라이아이스', power:'광합성 지원', powerText:'식물이 양분을 만드는 데 필요한 재료를 제공한다.', sym:'CO₂', art:'cards/06.webp', color:'#3d8b37'},
+  ar:  {no:'07', name:'아르곤', nick:'철벽 방어 기사', air:'공기 중 약 0.93%', trait:'다른 물질과 거의 반응하지 않는 기체', use:'용접 보호가스, 전구, 복층유리', power:'금속 보호막', powerText:'뜨거운 금속이 공기와 반응하는 것을 막는다.', sym:'Ar', art:'cards/07.webp', color:'#6b4fb3'},
+  h2o: {no:'08', name:'수증기', nick:'날씨의 마법사', air:'공기 중 약 0~4% (변동)', trait:'눈에 보이지 않는 기체 상태의 물', use:'증기터빈, 가습, 조리', power:'구름 생성', powerText:'냉각되어 응결하면 작은 물방울을 만든다.', sym:'H₂O', art:'cards/08.webp', color:'#3aa0d8'},
+  ch4: {no:'09', name:'메테인(메탄)', nick:'불꽃의 드래곤', air:'약 0.0002%', trait:'도시가스의 주성분, 연료로 사용', use:'', power:'블루 파이어', powerText:'', sym:'CH₄', art:'cards/09.webp', color:'#2456c4', ext:true},
+  o3:  {no:'10', name:'오존', nick:'자외선 방패', air:'위치에 따라 변동', trait:'성층권에서는 자외선 흡수, 지표면에서는 유해할 수 있음', use:'', power:'UV 실드', powerText:'', sym:'O₃', art:'cards/10.webp', color:'#7a3fa0', ext:true},
+  xe:  {no:'11', name:'제논(크세논)', nick:'희귀한 빛의 전사', air:'약 0.000009%', trait:'특수 조명, 일부 의료 분야에 사용', use:'', power:'제논 빔', powerText:'', sym:'Xe', art:'cards/11.webp', color:'#1f8fa3', ext:true},
   kr:  {no:'12', name:'크립톤', nick:'희귀 보호자', air:'약 0.00011%', trait:'특수 조명과 단열유리 등에 사용', use:'', power:'단열 배리어', powerText:'', sym:'Kr', color:'#5a6b7b', ext:true},
 };
 

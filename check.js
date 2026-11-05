@@ -141,7 +141,11 @@ async function main(){
   await load('',8); await ev(`showTab(2)`);
   const dex=await ev(`[...document.querySelectorAll('#dex .gc')].map(b=>b.dataset.k)`); let dexBad=[];
   for(const k of dex){ const c=await ev(`CARDS[${JSON.stringify(k)}]`);
-    await click(`#dex .gc[data-k="${k}"]`); const t=await ev(`document.querySelector('#bigB').innerText`);
+    await click(`#dex .gc[data-k="${k}"]`); const t=await ev(`(b=>b.innerText+' '+[...b.querySelectorAll('img')].map(i=>i.alt).join(' '))(document.querySelector('#bigB'))`);
+    if(c.art&&!fs.existsSync(path.join(__dirname,c.art))) dexBad.push(k+':그림 파일 없음');
+    if(c.art&&!await ev(`!!document.querySelector('#bigB img')`)) dexBad.push(k+':그림 안 뜸');
+    const barY=()=>ev(`document.querySelector('#bigX').getBoundingClientRect().y`), y0=await barY();
+    await ev(`(i=>i?i.decode().catch(()=>{}):0)(document.querySelector('#bigB img'))`); if(Math.abs(await barY()-y0)>1) dexBad.push(k+':그림이 뜨며 닫기 버튼이 움직임');
     for(const v of [c.name,c.nick,c.air,c.trait,c.sym,c.power]) if(!t.includes(v)) dexBad.push(k+':'+v);
     const labels=await ev(`[...document.querySelectorAll('#bigB .fr b')].map(b=>b.textContent)`);
     if(c.use&&!t.includes(c.use)) dexBad.push(k+':사용'); if(!c.use&&labels.includes('사용')) dexBad.push(k+':빈 사용 줄');
