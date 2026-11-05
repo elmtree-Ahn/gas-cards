@@ -11,9 +11,9 @@ const CARDS = {
   ar:  {no:'07', name:'아르곤', nick:'철벽 방어 기사', air:'공기 중 약 0.93%', trait:'다른 물질과 거의 반응하지 않는 기체', use:'용접 보호가스, 전구, 복층유리', power:'금속 보호막', powerText:'뜨거운 금속이 공기와 반응하는 것을 막는다.', sym:'Ar', art:'cards/07.webp', color:'#6b4fb3'},
   h2o: {no:'08', name:'수증기', nick:'날씨의 마법사', air:'공기 중 약 0~4% (변동)', trait:'눈에 보이지 않는 기체 상태의 물', use:'증기터빈, 가습, 조리', power:'구름 생성', powerText:'냉각되어 응결하면 작은 물방울을 만든다.', sym:'H₂O', art:'cards/08.webp', color:'#3aa0d8'},
   ch4: {no:'09', name:'메테인(메탄)', nick:'불꽃의 드래곤', air:'약 0.0002%', trait:'도시가스의 주성분, 연료로 사용', use:'', power:'블루 파이어', powerText:'', sym:'CH₄', art:'cards/09.webp', color:'#2456c4', ext:true},
-  o3:  {no:'10', name:'오존', nick:'자외선 방패', air:'위치에 따라 변동', trait:'성층권에서는 자외선 흡수, 지표면에서는 유해할 수 있음', use:'', power:'UV 실드', powerText:'', sym:'O₃', art:'cards/10.webp', color:'#7a3fa0', ext:true},
+  o3:  {no:'10', name:'오존', nick:'자외선 방패 수호자', air:'위치에 따라 변동', trait:'성층권에서는 자외선 흡수, 지표면에서는 유해할 수 있음', use:'', power:'UV 실드', powerText:'', sym:'O₃', art:'cards/10.webp', color:'#7a3fa0', ext:true},
   xe:  {no:'11', name:'제논(크세논)', nick:'희귀한 빛의 전사', air:'약 0.000009%', trait:'특수 조명, 일부 의료 분야에 사용', use:'', power:'제논 빔', powerText:'', sym:'Xe', art:'cards/11.webp', color:'#1f8fa3', ext:true},
-  kr:  {no:'12', name:'크립톤', nick:'희귀 보호자', air:'약 0.00011%', trait:'특수 조명과 단열유리 등에 사용', use:'', power:'단열 배리어', powerText:'', sym:'Kr', color:'#5a6b7b', ext:true},
+  kr:  {no:'12', name:'크립톤', nick:'보랏빛 방어 마법사', air:'약 0.00011%', trait:'특수 조명과 단열유리 등에 사용', use:'', power:'단열 배리어', powerText:'', sym:'Kr', art:'cards/12.webp', color:'#5a6b7b', ext:true},
 };
 
 const BASE = ['n2','o2','h2','he','ne','co2','ar','h2o'];
